@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Full-stack development",
+    "description": "Interfaces, APIs, and services for browser, mobile, and desktop applications.",
+    "tools": [
+      {"name":"TypeScript","icon":"typescript/typescript-original"},
+      {"name":"React","icon":"react/react-original"},
+      {"name":"Angular","icon":"angular/angular-original"},
+      {"name":"Next.js","icon":"nextjs/nextjs-original"},
+      {"name":"Node.js","icon":"nodejs/nodejs-original"},
+      {"name":"NestJS","icon":"nestjs/nestjs-original"},
+      {"name":".NET","icon":"dotnetcore/dotnetcore-original"},
+      {"name":"Python","icon":"python/python-original"},
+      {"name":"React Native","icon":"react/react-original"},
+      {"name":"Electron","icon":"electron/electron-original"}
+    ]
+  },
+  {
+    "name": "Cloud, data & integrations",
+    "description": "AWS deployments, event-driven services, data migrations, and commerce, carrier, and ERP integrations.",
+    "tools": [
+      {"name":"AWS","icon":"amazonwebservices/amazonwebservices-original"},
+      {"name":"Docker","icon":"docker/docker-original"},
+      {"name":"Terraform","icon":"terraform/terraform-original"},
+      {"name":"PostgreSQL","icon":"postgresql/postgresql-original"},
+      {"name":"Redis","icon":"redis/redis-original"},
+      {"name":"RabbitMQ","icon":"rabbitmq/rabbitmq-original"}
+    ]
+  },
+  {
+    "name": "AI & agentic development",
+    "description": "LLM orchestration, retrieval-augmented generation, and agent workflows for warehouse teams and client support.",
+    "tools": [
+      {"name":"LangChain"},{"name":"LangGraph"},{"name":"OpenAI API"},
+      {"name":"Claude Code"},{"name":"Codex"},{"name":"Herdr"},
+      {"name":"Git worktrees","icon":"git/git-original"}
+    ]
+  },
+  {
+    "name": "Testing & customer delivery",
+    "description": "Requirements discovery, onboarding, system configuration, release verification, and production support.",
+    "tools": [
+      {"name":"Jest","icon":"jest/jest-plain"},
+      {"name":"Jasmine","icon":"jasmine/jasmine-original"},
+      {"name":"Karma","icon":"karma/karma-original"},
+      {"name":"Playwright","icon":"playwright/playwright-original"},
+      {"name":"Cypress"}
+    ]
+  }
+]

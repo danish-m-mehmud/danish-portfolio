@@ -2,46 +2,76 @@
 layout: base.njk
 ---
 <section class="intro" aria-labelledby="intro-title">
-  <h1 id="intro-title">{{ title }}</h1>
-  <p class="lede">{{ description }}</p>
-  <p class="location">{{ location }}</p>
+  <div>
+    <p class="role">{{ title }}</p>
+    <h1 id="intro-title">Danish <span class="hero-initial">M.</span> Mehmud</h1>
+    <p class="lede">{{ description }}</p>
+    <div class="intro-links">
+      <a class="primary-link" href="#work">Explore projects</a>
+      <a href="mailto:{{ site.email }}">Email me</a>
+      <a class="social-link" href="{{ site.linkedin }}">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+          <path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2ZM8 19H5V9h3v10ZM6.5 7.7a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4ZM19 19h-3v-5.4c0-1.4-.5-2-1.5-2-1.1 0-1.8.8-1.8 2.2V19H10V9h2.7v1.3c.6-.9 1.5-1.5 2.9-1.5 2.2 0 3.4 1.4 3.4 4.1V19Z"/>
+        </svg>
+        LinkedIn
+      </a>
+    </div>
+  </div>
+  <aside class="profile-note" aria-label="At a glance">
+    <p class="location">{{ location }}</p>
+    <p><strong>7+ years</strong> in software engineering</p>
+    <p><strong>Current work</strong> Warehouse operations and applied AI at CMU Nerds</p>
+  </aside>
 </section>
 
 <section id="work" class="section" aria-labelledby="work-title">
-  <h2 id="work-title">Selected work</h2>
-  {% set featured = collections.work[0] %}
-  <article class="featured">
-    <div class="feature-copy">
-      <p class="meta">{{ featured.data.domain }}</p>
-      <h3><a href="{{ featured.url | url }}">{{ featured.data.title }}</a></h3>
-      <p>{{ featured.data.description }}</p>
-    </div>
-    <figure class="workflow">
-      <figcaption>Peak order processing capacity</figcaption>
-      <strong>{{ featured.data.metric }}</strong>
-      <ol aria-label="Warehouse fulfillment workflow">
-        <li>Receive</li>
-        <li>Stock</li>
-        <li>Fulfill</li>
-      </ol>
-    </figure>
-  </article>
+  <h2 id="work-title">Selected projects</h2>
   <div class="project-list">
     {% for project in collections.work %}
-    {% if not loop.first %}
-    <article class="project-row">
-      <div>
-        <p class="meta">{{ project.data.domain }}</p>
-        <h3><a href="{{ project.url | url }}">{{ project.data.title }}</a></h3>
+    <article class="project-card{% if project.data.scope %} project-card--lead{% endif %}">
+      <div class="project-copy">
+        <p class="meta">{{ project.data.domain }} · {{ project.data.employer }}</p>
+        <h3>{{ project.data.title }}</h3>
+        <p>{{ project.data.description }}</p>
+        <p class="project-result">{{ project.data.result }}</p>
+        <p class="stack">{{ project.data.stack }}</p>
+        <a class="case-link" href="{{ project.url | url }}" aria-label="Read the {{ project.data.title }} case study">Read case study</a>
       </div>
-      <p>{{ project.data.description }}</p>
+      {% if project.data.scope %}
+      <dl class="project-scope">
+        {% for area in project.data.scope %}
+        <div><dt>{{ area.title }}</dt><dd>{{ area.detail }}</dd></div>
+        {% endfor %}
+      </dl>
+      {% endif %}
     </article>
-    {% endif %}
     {% endfor %}
   </div>
 </section>
 
 <section id="experience" class="section experience" aria-labelledby="experience-title">
   <h2 id="experience-title">Experience</h2>
-  <div class="prose">{{ content | safe }}</div>
+  <div class="prose career">{{ content | safe }}</div>
+</section>
+
+<section id="skills" class="section skills" aria-labelledby="skills-title">
+  <h2 id="skills-title">Skills &amp; tools</h2>
+  <div class="skills-grid">
+    {% for group in skills %}
+    <article class="skill-group">
+      <h3>{{ group.name }}</h3>
+      <p>{{ group.description }}</p>
+      <ul>
+        {% for tool in group.tools %}
+        <li>
+          {% if tool.icon %}
+          <img src="{{ ('/assets/icons/' ~ tool.icon ~ '.svg') | url }}" alt="" width="20" height="20" loading="lazy">
+          {% endif %}
+          {{ tool.name }}
+        </li>
+        {% endfor %}
+      </ul>
+    </article>
+    {% endfor %}
+  </div>
 </section>

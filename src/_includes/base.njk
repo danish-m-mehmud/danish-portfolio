@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="{{ description | escape }}">
-  <meta name="color-scheme" content="light dark">
+  <meta name="color-scheme" content="dark">
   <title>{% if page.url != "/" %}{{ title | escape }} · {% endif %}{{ site.name }}</title>
   <link rel="stylesheet" href="{{ '/assets/site.css' | url }}">
 </head>
@@ -12,10 +12,11 @@
   <a class="skip" href="#main">Skip to content</a>
   <header class="masthead">
     <div class="shell masthead-inner">
-      <a class="wordmark" href="{{ '/' | url }}">{{ site.name }}</a>
+      <a class="wordmark" href="{{ '/' | url }}"><span class="monogram" aria-hidden="true">M<span>.</span></span><span>Danish <span class="middle-initial">M.</span> Mehmud</span></a>
       <nav aria-label="Primary">
         <a href="{{ '/#work' | url }}">Work</a>
         <a href="{{ '/#experience' | url }}">Experience</a>
+        <a href="{{ '/#skills' | url }}">Skills</a>
         <a href="{{ '/#contact' | url }}">Contact</a>
       </nav>
     </div>
@@ -28,7 +29,6 @@
     </div>
     <nav aria-label="Elsewhere">
       <a href="{{ site.linkedin }}">LinkedIn</a>
-      <a href="{{ site.github }}">GitHub</a>
     </nav>
   </footer>
 </body>

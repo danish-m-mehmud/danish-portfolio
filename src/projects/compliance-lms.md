@@ -4,17 +4,18 @@ domain: Learning platforms
 employer: SumatoSoft
 order: 2
 description: Modernized a multi-tenant learning platform serving 70,000+ users in regulated industries.
+ownership: "I owned full-stack delivery and led the phased migration of the legacy .NET application to AWS services."
+stack: "React · .NET Core · AWS Lambda · OpenSearch"
+result: "Cut dashboard load times by 40% and billing production issues by 60%, and increased trial-to-paid conversion by 12%."
 ---
-## Phased modernization
+## Context
 
-I led a phased migration from .NET Framework 4.8 to .NET Core on AWS, extracting capabilities from a 6,000+ line controller into independently deployable Lambda services. I moved processing into queue-driven workflows with SQS and SNS and shifted course search to OpenSearch.
+The multi-tenant LMS served more than 70,000 users in regulated industries. Its compliance training features spanned course search, reporting, and subscriptions, with core workflows housed in a legacy .NET Framework application.
 
-## Analytics and subscriptions
+## What I delivered
 
-I shipped analytics dashboards in React and cut dashboard load times by **40%** through lazy loading, code splitting, and Redis and database optimization. I redesigned subscription checkout and strengthened billing API validation, increasing trial-to-paid conversion by **12%** and reducing billing production issues by **60%**.
+I led a phased move to .NET Core on AWS. I extracted capabilities from a 6,000+ line controller into independently deployable Lambda services using SQS and SNS and moved course search to OpenSearch. I also built a one-command local AWS environment with Terraform, Docker, and LocalStack so engineers could test integrations locally.
 
-## Developer workflow
+## Production outcome
 
-I built a one-command local AWS environment so engineers could run and test integrations using Terraform, Docker, and LocalStack.
-
-**Stack** · React, TypeScript, React Query, .NET Core, AWS Lambda, SQS, SNS, OpenSearch, Redis
+I improved the React analytics dashboards using lazy loading, code splitting, and Redis and database optimization, cutting load times by 40%. I redesigned the subscription checkout and strengthened billing API validation, increasing trial-to-paid conversion by 12% and reducing billing production issues by 60%.

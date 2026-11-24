@@ -8,5 +8,10 @@ layout: base.njk
     <h1>{{ title }}</h1>
     <p class="lede">{{ description }}</p>
   </header>
+  <dl class="case-facts">
+    <div><dt>My role</dt><dd>{{ ownership }}</dd></div>
+    <div><dt>Outcome</dt><dd>{{ result }}</dd></div>
+    <div><dt>Technology</dt><dd>{{ stack }}</dd></div>
+  </dl>
   <div class="prose">{{ content | safe }}</div>
 </article>
