@@ -1,18 +1,26 @@
-# Danish M. Mehmud Portfolio
+# Danish M. Mehmud | Engineering Portfolio
 
-An Eleventy portfolio with Markdown content in `src/index.md` and `src/projects/`.
+A portfolio for Danish M. Mehmud, a Forward Deployed Engineer based in New York. It covers customer-facing product delivery, full-stack systems, and applied AI through five case studies: Atomic, a compliance training LMS, Talent Bridge, facility monitoring, and eCommerce delivery.
+
+The homepage includes professional experience, technical skills, and contact links. Each case study explains the problem, Danish’s role, the implementation, and the production outcome.
+
+## Hosting
+
+Configured for Vercel. The production URL will be available after the GitHub repository is connected and the first deployment succeeds.
+
+Vercel builds the site from the `main` branch. Automatic deployments from other branches are disabled in `vercel.json`.
+
+## Local development
+
+The static site uses Eleventy, Markdown, Nunjucks, and CSS. Bun installs dependencies and runs the build.
 
 ```sh
 bun install --frozen-lockfile
 bun run dev
 ```
 
-Run `bun run build` to generate the static site in `_site/`.
+Run `bun run build` to generate the static site in `_site/`. Edit the homepage and experience in `src/index.md`, case studies in `src/projects/`, and the skills list in `src/_data/skills.json`. Technology icons are served locally from [Devicon](https://github.com/devicons/devicon).
 
-Technology logos are served locally from [Devicon](https://github.com/devicons/devicon) under its MIT license.
+## Contact
 
-## Deploy to Vercel
-
-In Vercel, choose **Add New → Project** and import `danish-m-mehmud/danish-portfolio`. Grant the Vercel GitHub app access to that repository if it is missing from the list. Keep the root directory at the repository root and select **Deploy**.
-
-Vercel uses the build settings in `vercel.json`. Pushes to `main` create production deployments after the repository is connected.
+[LinkedIn](https://www.linkedin.com/in/danishmmehmud/) · [Email](mailto:danishmehmud.works@gmail.com)
