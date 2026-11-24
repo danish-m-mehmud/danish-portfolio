@@ -1,0 +1,47 @@
+---
+layout: base.njk
+---
+<section class="intro" aria-labelledby="intro-title">
+  <h1 id="intro-title">{{ title }}</h1>
+  <p class="lede">{{ description }}</p>
+  <p class="location">{{ location }}</p>
+</section>
+
+<section id="work" class="section" aria-labelledby="work-title">
+  <h2 id="work-title">Selected work</h2>
+  {% set featured = collections.work[0] %}
+  <article class="featured">
+    <div class="feature-copy">
+      <p class="meta">{{ featured.data.domain }}</p>
+      <h3><a href="{{ featured.url | url }}">{{ featured.data.title }}</a></h3>
+      <p>{{ featured.data.description }}</p>
+    </div>
+    <figure class="workflow">
+      <figcaption>Peak order processing capacity</figcaption>
+      <strong>{{ featured.data.metric }}</strong>
+      <ol aria-label="Warehouse fulfillment workflow">
+        <li>Receive</li>
+        <li>Stock</li>
+        <li>Fulfill</li>
+      </ol>
+    </figure>
+  </article>
+  <div class="project-list">
+    {% for project in collections.work %}
+    {% if not loop.first %}
+    <article class="project-row">
+      <div>
+        <p class="meta">{{ project.data.domain }}</p>
+        <h3><a href="{{ project.url | url }}">{{ project.data.title }}</a></h3>
+      </div>
+      <p>{{ project.data.description }}</p>
+    </article>
+    {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<section id="experience" class="section experience" aria-labelledby="experience-title">
+  <h2 id="experience-title">Experience</h2>
+  <div class="prose">{{ content | safe }}</div>
+</section>

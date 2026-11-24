@@ -1,0 +1,13 @@
+{
+  "name": "danish-m-mehmood-portfolio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "bun --bun run eleventy",
+    "dev": "bun --bun run eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "3.1.2"
+  },
+  "packageManager": "bun@1.3.14"
+}

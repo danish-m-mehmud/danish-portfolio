@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ description | escape }}">
+  <meta name="color-scheme" content="light dark">
+  <title>{% if page.url != "/" %}{{ title | escape }} · {% endif %}{{ site.name }}</title>
+  <link rel="stylesheet" href="{{ '/assets/site.css' | url }}">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="masthead">
+    <div class="shell masthead-inner">
+      <a class="wordmark" href="{{ '/' | url }}">{{ site.name }}</a>
+      <nav aria-label="Primary">
+        <a href="{{ '/#work' | url }}">Work</a>
+        <a href="{{ '/#experience' | url }}">Experience</a>
+        <a href="{{ '/#contact' | url }}">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main class="shell" id="main" tabindex="-1">{{ content | safe }}</main>
+  <footer class="shell footer" id="contact">
+    <div>
+      <h2>Get in touch</h2>
+      <a class="email" href="mailto:{{ site.email }}">{{ site.email }}</a>
+    </div>
+    <nav aria-label="Elsewhere">
+      <a href="{{ site.linkedin }}">LinkedIn</a>
+      <a href="{{ site.github }}">GitHub</a>
+    </nav>
+  </footer>
+</body>
+</html>
